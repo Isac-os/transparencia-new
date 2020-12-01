@@ -1,0 +1,21 @@
+.intro{
+  background: #005aa9;
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  align-items: center;
+}
+
+.intro h1, h6{
+  color: white;
+}
+
+.intro h6{
+  text-align: justify;
+}
+
+.unit-matriz{
+  background: whitesmoke;
+  width: 100%;
+  height: 30rem;
+}

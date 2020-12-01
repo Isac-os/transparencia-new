@@ -1,0 +1,15 @@
+.color_header{
+  background-color: #005aa9 !important;
+}
+
+.link{
+  color: white;
+}
+
+.link:hover{
+  color: lightgray;
+}
+
+.color-button{
+  background-color: #0092d5 !important;
+}
