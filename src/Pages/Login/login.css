@@ -1,0 +1,58 @@
+.body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 94vh;
+  background-color: #005aa9;
+}
+
+
+
+.login-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  background-color: lightgray;
+  border: 1px solid lightgray;
+  height: 25rem;
+  width: 30rem;
+  border-radius: 5px;
+  
+}
+
+.login-box input{
+  width: 100%;
+    border: 1px solid #DDD;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 17px;
+}
+
+.login-box h2{
+  margin-bottom: ;
+  color: #005aa9;
+  text-align: center;
+}
+
+.login-box h6{
+  color: #005aa9;
+  text-align: center;
+}
+
+.login{
+  margin-top: -5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.box-area{
+  margin-top: 10rem;
+}
+
+.line{
+  margin-top: 5rem;
+}
+
+
+

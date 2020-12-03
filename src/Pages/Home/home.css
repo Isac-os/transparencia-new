@@ -17,5 +17,38 @@
 .unit-matriz{
   background: whitesmoke;
   width: 100%;
-  height: 30rem;
+  height: 100vh;
+}
+
+.unit-matriz h1{
+  font-size: 3rem;
+  color:#005aa9 ;
+}
+
+.unit-matriz h5{
+  text-align: justify;
+  color: #606062;
+}
+
+.line{
+  background-color: #005aa9;
+  border: 0.5px solid #005aa9;
+}
+
+.infos{
+  margin-top: 3rem;
+}
+
+.infos h2{
+  color: #606062;
+}
+
+.select label{
+  color: #005aa9;
+  font-weight: bold;
+}
+
+.seletor{
+  color: white !important;
+  background-color: #005aa9 !important;
 }
