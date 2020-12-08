@@ -1,26 +1,50 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Map from './checkbox-map copy';
-// import Brazil from "@svg-maps/brazil";
-// import { CheckboxSVGMap } from "react-svg-map";
-// import "react-svg-map/lib/index.css";
-
-import CheckboxSVGMap from './checkbox-map';
+import React, { useState, useEffect } from 'react';
+import Brazil from '@svg-maps/brazil';
+import { CheckboxSVGMap } from 'react-svg-map';
+import { getLocationName } from './utils';
 
 import './teste.css';
-import { Col, Row } from 'react-bootstrap';
+import { Row, Col, Container, Form } from 'react-bootstrap';
+
+export default function Map() {
+  const [teste, setTeste] = useState("")
 
 
-export default function Teste() {
+  function handleLocationFocus(event) {
+    const focusedLocation = getLocationName(event);
+    setTeste({ focusedLocation: focusedLocation });
+  }
+
+
   return (
-    <div>
-      <Container>
-        <Row>
-          <Col md={6}>
-            <Map />
-          </Col>
-        </Row>
-      </Container>
-    </div>
+    <Container>
+      <Row>
+        <Col md={6}>
+          <CheckboxSVGMap
+            map={Brazil}
+            onLocationFocus={handleLocationFocus} />
+        </Col>
+        <Col md={6}>
+          <div>
+            {teste.focusedLocation === "Tocantins" ? (
+              <div>
+                <Row className="mt-4">
+                  <Col md={6}>
+                    <label>Selecione o tipo de informação</label>
+                    <Form.Group>
+                      <Form.Control className="seletor" as="select" size="lg">
+                        <option>Selecionar</option>
+                      </Form.Control>
+                    </Form.Group></Col>
+                </Row>
+              </div>
+            ) : null}
+          </div>
+        </Col>
+      </Row>
+    </Container >
+
+
   )
+
 }

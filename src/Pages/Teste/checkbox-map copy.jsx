@@ -4,7 +4,7 @@ import { CheckboxSVGMap } from 'react-svg-map';
 import { getLocationName } from './utils';
 
 export default function Map() {
-	const [teste, setTeste] = useState(null)
+	const [teste, setTeste] = useState("")
 
 
 	function handleLocationFocus(event) {
@@ -15,9 +15,9 @@ export default function Map() {
 
 	return (
 		<article className="examples__block">
+			<h1>{teste.focusedLocation}</h1>
 			<div className="examples__block__info">
 				<div className="examples__block__info__item">
-					Focused location: {teste}
 				</div>
 			</div>
 			<div className="examples__block__map">
