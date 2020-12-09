@@ -6,6 +6,7 @@ import Image from 'react-bootstrap/Image';
 import Form from 'react-bootstrap/Form';
 
 import './home.css';
+import Map from '../Teste/teste';
 
 export default function Home() {
   return (
@@ -83,6 +84,12 @@ Institucional e também por Unidades, considerando as suas respectivas tipologia
               </Form.Group>
             </Col>
           </Row>
+          <div className="map">
+            <h1 className="mb-4">Unidades Geridas</h1>
+            <Row className="mt-4">
+              <Map />
+            </Row>
+          </div>
         </Container>
       </div>
 

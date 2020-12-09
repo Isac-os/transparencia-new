@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Brazil from '@svg-maps/brazil';
 import { CheckboxSVGMap } from 'react-svg-map';
 import { getLocationName } from './utils';
 
-import './teste.css';
-import { Row, Col, Container, Form, Image, Badge } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import './map.css';
+import { Row, Col, Container, Form } from 'react-bootstrap';
 
 export default function Map() {
   const [teste, setTeste] = useState("")
@@ -20,7 +19,7 @@ export default function Map() {
   return (
     <Container>
       <Row>
-        <Col md={6}>
+        <Col md={8}>
           <CheckboxSVGMap
             map={Brazil}
             onLocationFocus={handleLocationFocus} />
@@ -30,39 +29,20 @@ export default function Map() {
             {teste.focusedLocation === "Tocantins" ? (
               <div>
                 <Row className="mt-4">
-                  <Col md={6}>
-                    <label>Selecione o tipo de unidade</label>
+                  <Col md={4}>
+                    <label>Selecione o tipo de informação</label>
                     <Form.Group>
                       <Form.Control className="seletor" as="select" size="lg">
                         <option>Selecionar</option>
                       </Form.Control>
-                    </Form.Group>
-                    <Col>
-                      <Image src="/logo-horizontal.svg" fluid
-                        width="200rem"
-                        className="d-inline-block align-top logo-isac mt-4"
-                        alt="isac-logo"
-                      />
-                      <h5 className="mt-4">Upa - Unidade de Pronto Atendimento</h5>
-                      <Badge pill variant="primary">
-                        Brasilia/DF
-                      </Badge>
-                      <Link to="/#">
-                        <Badge className="ml-2" pill variant="success">
-                          Visualizar
-                      </Badge>
-                      </Link>
-                    </Col>
-                  </Col>
+                    </Form.Group></Col>
                 </Row>
               </div>
             ) : null}
-          </div>
-          <div>
             {teste.focusedLocation === "São Paulo" ? (
               <div>
                 <Row className="mt-4">
-                  <Col md={6}>
+                  <Col md={4}>
                     <label>Selecione o tipo de informação</label>
                     <Form.Group>
                       <Form.Control className="seletor" as="select" size="lg">
