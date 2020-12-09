@@ -26,7 +26,7 @@ export default function Header() {
             <Nav className="ml-auto">
               <Nav>
                 <Nav.Link>
-                  <Link to="/" className="link">
+                  <Link to="#unidade-matriz" className="link">
                     <h6>Unidade Matriz</h6>
                   </Link>
                 </Nav.Link>

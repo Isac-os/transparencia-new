@@ -7,7 +7,7 @@ import './teste.css';
 import { Row, Col, Container, Form, Image, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-export default function Map() {
+export default function Teste() {
   const [teste, setTeste] = useState("")
 
 
