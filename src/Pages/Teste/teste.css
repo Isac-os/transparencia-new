@@ -1,0 +1,46 @@
+.svg-map {
+  width: 100%;
+  height: auto;
+  stroke: grey;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round; }
+  .svg-map__location {
+    fill: whitesmoke; }
+    /* .svg-map__location:focus, .svg-map__location:hover {
+      fill: #b8e2b3;
+      outline: 0; } */
+    /* .svg-map__location[aria-checked=true] {
+      fill: #f4bc44; } */
+
+    #to, #pa, #al, #ba, #df{
+      fill: #005da2;
+      cursor: pointer;
+    }
+
+    #to:hover{
+      fill: #0092d5;
+    }
+
+    #pa:hover{
+      fill: #0092d5;
+    }
+
+    #al:hover{
+      fill: #0092d5;
+    }
+
+    #ba:hover{
+      fill: #0092d5;
+    }
+
+    #df:hover{
+      fill: #0092d5;
+    }
+
+    h5{
+      color: #005AA9;
+    }
+
+      
+
