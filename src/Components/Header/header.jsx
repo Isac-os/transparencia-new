@@ -16,34 +16,31 @@ export default function Header() {
     <>
       <Navbar className="color_header" collapseOnSelect expand="lg" variant="dark">
         <Container>
-          <Image src="/logo-horizontal-white.svg" fluid
-            width="170px"
-            className="d-inline-block align-top logo-isac"
-            alt="isac-logo"
-          />
+          <Link to="/">
+            <Image src="/logo-horizontal-white.svg" fluid
+              width="170px"
+              className="d-inline-block align-top logo-isac"
+              alt="isac-logo"
+            />
+          </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
-              <Nav>
-                <Nav.Link>
-                  <Link to="/" className="link">
-                    <h6>Unidade Matriz</h6>
-                  </Link>
-                </Nav.Link>
-                <Nav.Link>
-                  <Link to="/unidades" className="link">
-                    <h6>Unidades Geridas</h6>
-                  </Link>
-                </Nav.Link>
-                <Nav.Link>
-                  <Link to="/covid" className="link">
-                    <h6>Site do ISAC</h6>
-                  </Link>
-                </Nav.Link>
-              </Nav>
+              <Nav.Link classname="link" href="#unidade-matriz">
+                <h6>Unidade Matriz</h6>
+              </Nav.Link>
+              <Nav.Link classname="link" href="#unidades-geridas">
+                <h6>Unidades Geridas</h6>
+              </Nav.Link>
+              <Nav.Link classname="link" href="https://isac.org.br">
+                <h6>Site ISAC</h6>
+              </Nav.Link>
               <Form className="ml-4" inline>
                 <FormControl type="text" placeholder="O que você procura?" className="mr-sm-2" />
-                <Button className='color-button ml-2'><span className="mr-2"><FaLock /></span>Área Restrita</Button>
+                <Link to="/login">
+                  <Button className='color-button ml-2'><span className="mr-2"><FaLock /></span>Área Restrita</Button>
+                </Link>
+
               </Form>
             </Nav>
           </Navbar.Collapse>

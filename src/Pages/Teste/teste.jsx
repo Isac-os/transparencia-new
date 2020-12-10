@@ -7,7 +7,7 @@ import './teste.css';
 import { Row, Col, Container, Form, Image, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-export default function Map() {
+export default function Teste() {
   const [teste, setTeste] = useState("")
 
 
@@ -27,7 +27,7 @@ export default function Map() {
         </Col>
         <Col md={6}>
           <div>
-            {teste.focusedLocation === "Tocantins" ? (
+            {teste.focusedLocation === "Distrito Federal" ? (
               <div>
                 <Row className="mt-4">
                   <Col md={6}>
@@ -43,11 +43,11 @@ export default function Map() {
                         className="d-inline-block align-top logo-isac mt-4"
                         alt="isac-logo"
                       />
-                      <h5 className="mt-4">Upa - Unidade de Pronto Atendimento</h5>
+                      <h5 className="mt-4">ISAC - Instituto Saúde e Cidadania</h5>
                       <Badge pill variant="primary">
                         Brasilia/DF
                       </Badge>
-                      <Link to="/#">
+                      <Link to="/unidade">
                         <Badge className="ml-2" pill variant="success">
                           Visualizar
                       </Badge>

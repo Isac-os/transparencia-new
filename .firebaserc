@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "transparencianew"
+  },
+  "targets": {
+    "transparencianew": {
+      "hosting": {
+        "staging": [
+          "transparencia-staging-isac"
+        ],
+        "prod": [
+          "transparencianew"
+        ]
+      }
+    }
+  }
+}
