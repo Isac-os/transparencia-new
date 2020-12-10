@@ -17,7 +17,7 @@ export default function Routes() {
           <Route exact path="/teste" component={Teste} />
           <Route exact path="/unidade" component={Unidade} />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </BrowserRouter>
     </>
 
