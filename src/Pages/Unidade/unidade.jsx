@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Form, Image, Breadcrumb } from 'react-bootstrap';
 
+import api from '../../Services/api';
 import './unidade.css';
 
-export default function Unidade() {
+export default function Unidade(props) {
+  const [unit, setUnit] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const url = await api.get('/units/' + props.match.params.id);
+      setUnit(url.data);
+      // setLoading(false);
+    };
+    fetchData();
+  }, [props.match.params.id]);
+
+  console.log("Unidade", unit)
+
   return (
     <>
       <div className="unit">
@@ -12,8 +26,8 @@ export default function Unidade() {
             <Breadcrumb>
               <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
               <Breadcrumb.Item active href="">
-                ISAC - Instituto Saúde e Cidadania
-  </Breadcrumb.Item>
+                {unit.name}
+              </Breadcrumb.Item>
             </Breadcrumb>
           </div>
           <Row>
@@ -27,7 +41,7 @@ export default function Unidade() {
           </Row>
           <Row className="mt-4">
             <Col md={12}>
-              <h1>ISAC - Instituto Saúde e Cidadania</h1>
+              <h1>{unit.name}</h1>
             </Col>
           </Row>
           <Row className="mt-4">
@@ -42,13 +56,13 @@ export default function Unidade() {
           </Row>
           <Row className="mt-4">
             <Col md={6}>
-              <h5>CNPJ: </h5>
-              <h5>Endereço: </h5>
-              <h5>Cidade: </h5>
+              <h5>CNPJ: {unit.cnpj}</h5>
+              <h5>Endereço: {unit.address}</h5>
+              <h5>Cidade: {unit.city}/{unit.uf}</h5>
             </Col>
             <Col md={6}>
-              <h5>CEP: </h5>
-              <h5>Telefone: </h5>
+              <h5>CEP: {unit.cep}</h5>
+              <h5>Telefone: {unit.phone}</h5>
             </Col>
           </Row>
           <Row className="infos">
