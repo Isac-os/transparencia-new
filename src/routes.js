@@ -5,6 +5,8 @@ import Header from './Components/Header/header';
 import Teste from './Pages/Teste/teste';
 import Footer from './Components/Footer/footer';
 import Unidade from './Pages/Unidade/unidade';
+import UnidadesLista from './Pages/Unidade/unidadesLista';
+import UnidadeFormulario from './Pages/Unidade/unidadeFormulario';
 
 export default function Routes() {
   return (
@@ -16,6 +18,8 @@ export default function Routes() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/teste" component={Teste} />
           <Route exact path="/unidade" component={Unidade} />
+          <Route exact path="/unidades" component={UnidadesLista} />
+          <Route exact path="/unidade/nova" component={UnidadeFormulario} />
         </Switch>
         <Footer />
       </BrowserRouter>

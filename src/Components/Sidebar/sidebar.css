@@ -1,0 +1,6 @@
+.sidebar .nav-link {
+  color: var(--color-isac-light-blue);
+}
+.sidebar {
+  border-right: 2px solid var(--color-isac-light-blue);
+}

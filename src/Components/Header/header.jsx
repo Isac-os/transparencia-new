@@ -26,13 +26,13 @@ export default function Header() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ml-auto">
-              <Nav.Link classname="link" href="#unidade-matriz">
+              <Nav.Link className="link" href="#unidade-matriz">
                 <h6>Unidade Matriz</h6>
               </Nav.Link>
-              <Nav.Link classname="link" href="#unidades-geridas">
+              <Nav.Link className="link" href="#unidades-geridas">
                 <h6>Unidades Geridas</h6>
               </Nav.Link>
-              <Nav.Link classname="link" href="https://isac.org.br">
+              <Nav.Link className="link" href="https://isac.org.br">
                 <h6>Site ISAC</h6>
               </Nav.Link>
               <Form className="ml-4" inline>

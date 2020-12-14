@@ -1,4 +1,4 @@
-*{
+* {
   font-family: "Poppins", sans-serif !important;
 }
 
@@ -11,10 +11,15 @@ h6 {
   font-weight: bold !important;
 }
 
-.nav-link {
+nav .nav-link {
   color: white !important;
 }
 
 .nav-link:hover {
   color: blue !important;
+}
+
+:root {
+  --color-isac-light-blue: #0092d5;
+  --color-isac-dark-blue: #005aa9;
 }
