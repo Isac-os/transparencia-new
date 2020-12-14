@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -7,8 +7,20 @@ import Form from 'react-bootstrap/Form';
 
 import './home.css';
 import Map from '../Teste/teste';
+import api from '../../Services/api';
 
 export default function Home() {
+  const [sede, setSede] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const url = await api.get('units/1');
+      setSede(url.data);
+    };
+    fetchData();
+  }, []);
+
+  console.log(sede)
   return (
     <>
       <div className="intro">
