@@ -13,7 +13,7 @@ import './unidade.css';
 export default function UnidadeLista() {
   React.useEffect(() => {
     UnidadeService.getAll().then(results => {
-      console.log(results);
+      console.log(results.data);
     })
   }, [])
 

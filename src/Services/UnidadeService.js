@@ -4,24 +4,24 @@ import { unMask } from "remask";
 
 class UnidadeService {
   getAll() {
-    return api.get("unit_status");
+    return api.get("units");
   }
 
   get(id) {
-    return api.get(`unit_status/${id}`);
+    return api.get(`units/${id}`);
   }
 
   create(data) {
     data = { ...data, cnpj: unMask(data.cnpj), cep: unMask(data.cep) };
-    return api.post("unit_status", data);
+    return api.post("units", data);
   }
 
   update(id, data) {
-    return api.put(`unit_status/${id}`, data);
+    return api.put(`units/${id}`, data);
   }
 
   delete(id) {
-    return api.delete(`unit_status/${id}`);
+    return api.delete(`units/${id}`);
   }
 }
 
