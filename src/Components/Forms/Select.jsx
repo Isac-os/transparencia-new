@@ -13,8 +13,8 @@ export default (props) => {
     validator[props.name]?.required ? (
       <span className="text-danger">*</span>
     ) : (
-      ""
-    );
+        ""
+      );
 
   return (
     <>
@@ -28,7 +28,7 @@ export default (props) => {
           {...props}
           isInvalid={errors[props.name]}
         >
-          <option value="">Selecione</option>
+          <option value="">{props.firstoption}</option>
           {props.data.map((item) => (
             <option key={item.id} value={item[chave]}>
               {item[descricao]}

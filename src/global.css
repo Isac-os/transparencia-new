@@ -23,3 +23,13 @@ nav .nav-link {
   --color-isac-light-blue: #0092d5;
   --color-isac-dark-blue: #005aa9;
 }
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+}

@@ -35,6 +35,10 @@
   left: -22px;
 }
 
+.units-list {
+  height: 650px;
+  overflow: auto;
+}
 .units-list .card {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -43,4 +47,12 @@
 }
 .units-list h4 {
   color: var(--color-isac-light-blue);
+}
+
+.units-list a {
+  left: 10px;
+  bottom: 10px;
+}
+.units-list a:hover {
+  text-decoration: none;
 }

@@ -17,9 +17,10 @@ export default function Routes() {
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/teste" component={Teste} />
-          <Route exact path="/unidade" component={Unidade} />
-          <Route exact path="/unidades" component={UnidadesLista} />
           <Route exact path="/unidade/nova" component={UnidadeFormulario} />
+          <Route exact path="/unidade/:id/editar" component={UnidadeFormulario} />
+          <Route exact path="/unidades" component={UnidadesLista} />
+          <Route exact path="/unidade" component={Unidade} />
         </Switch>
         <Footer />
       </BrowserRouter>

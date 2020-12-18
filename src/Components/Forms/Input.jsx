@@ -7,7 +7,7 @@ export default function Input(props) {
   const [value, setValue] = useState();
 
   useEffect(() => {
-    setValue(props.valor);
+    setValue(props.val);
   }, [props]);
 
   const id = props.id ? props.id : props.name;
@@ -21,10 +21,10 @@ export default function Input(props) {
       );
 
   function handleChange(event) {
-    const valor = props.mask
+    const val = props.mask
       ? mask(unMask(event.target.value), props.mask)
       : event.target.value;
-    setValue(valor);
+    setValue(val);
   }
 
   return (

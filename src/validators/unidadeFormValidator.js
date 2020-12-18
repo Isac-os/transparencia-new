@@ -5,7 +5,7 @@ export default {
   logo: {
     required: mensagens.required,
   },
-  name: {
+  nome: {
     required: mensagens.required,
   },
   cnpj: {
@@ -26,7 +26,7 @@ export default {
   uf: {
     required: mensagens.required,
   },
-  address: {
+  endereco: {
     required: mensagens.required,
   },
   phone: {

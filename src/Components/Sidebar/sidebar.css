@@ -3,4 +3,5 @@
 }
 .sidebar {
   border-right: 2px solid var(--color-isac-light-blue);
+  height: 100vh;
 }
