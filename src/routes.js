@@ -5,7 +5,12 @@ import Header from './Components/Header/header';
 import Teste from './Pages/Teste/teste';
 import Footer from './Components/Footer/footer';
 import Unidade from './Pages/Unidade/unidade';
+<<<<<<< HEAD
 import Erro from './Pages/Erro/erro';
+=======
+import UnidadesLista from './Pages/Unidade/unidadesLista';
+import UnidadeFormulario from './Pages/Unidade/unidadeFormulario';
+>>>>>>> feature/dashboard
 
 export default function Routes() {
   return (
@@ -16,8 +21,15 @@ export default function Routes() {
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/teste" component={Teste} />
+<<<<<<< HEAD
           <Route exact path="/unidade/:id" component={Unidade} />
           <Route path="*" component={Erro} />
+=======
+          <Route exact path="/unidade/nova" component={UnidadeFormulario} />
+          <Route exact path="/unidade/:id/editar" component={UnidadeFormulario} />
+          <Route exact path="/unidades" component={UnidadesLista} />
+          <Route exact path="/unidade" component={Unidade} />
+>>>>>>> feature/dashboard
         </Switch>
         <Footer />
       </BrowserRouter>

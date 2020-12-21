@@ -2,20 +2,18 @@ import React from 'react';
 
 import './footer.css';
 import { Row, Col, Image, Container } from 'react-bootstrap';
-
+import logoImg from '../../assets/img/logo-horizontal-white.svg'
 const Footer = () => {
   return (
     <>
       <div className="footer">
         <Row>
           <Container>
-            <Col md={4} className="d-flex align-items-center">
-              {/* <Image src="/logo-horizontal-white.svg" fluid
-                width="170px"
-                className="d-inline-block align-top logo-isac"
-                alt="isac-logo"
-              /> */}
-            </Col>
+            <Image src={logoImg} fluid
+              width="170px"
+              className="mt-2"
+              alt="isac-logo"
+            />
           </Container>
         </Row>
       </div>
