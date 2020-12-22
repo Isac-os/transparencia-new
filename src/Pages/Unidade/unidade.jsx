@@ -13,12 +13,12 @@ export default function Unidade(props) {
     UnidadesService.get(id).then(results => {
       setUnit(results.data);
     })
-    /* const fetchData = async () => {
-      const url = await UnidadesService.get('/units/' + props.match.params.id);
-      setUnit(url.data);
-      // setLoading(false);
-    };
-    fetchData(); */
+    // /* const fetchData = async () => {
+    //   const url = await UnidadesService.get('/units/' + props.match.params.id);
+    //   setUnit(url.data);
+    //   // setLoading(false);
+    // };
+    // fetchData(); */
   }, [props]);
 
   const {
@@ -113,6 +113,7 @@ export default function Unidade(props) {
     }
     return;
   }
+  console.log("unidade", unit)
   return (
     <>
       <div className="unit">
