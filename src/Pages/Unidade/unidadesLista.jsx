@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaClinicMedical } from 'react-icons/fa';
-import { Badge, Button, Card, Col, Form, Image, Row } from 'react-bootstrap';
+import { FaClinicMedical, FaRegEdit } from 'react-icons/fa';
+import { Badge, Card, Col, Form, Image, Row } from 'react-bootstrap';
 
 import PageTemplate from '../../Components/Dashboard/PageTemplate';
 
@@ -16,22 +16,11 @@ export default function UnidadeLista() {
   React.useEffect(() => {
     UnidadeService.getAll().then(results => {
       setUnits(results.data);
+      console.log(results.data);
     })
   }, [])
 
-  function handleClick(id) {
-    if (window.confirm("Deseja realmente excluir o registro?")) {
-      UnidadeService.delete(id)
-        .then(() => {
-          UnidadeService.getAll().then((results) => {
-            setUnits(results.data);
-          });
-        })
-        .catch((error) => {
-          console.log(error.response.data);
-        });
-    }
-  }
+
   return (
     <>
       <PageTemplate>
@@ -59,19 +48,17 @@ export default function UnidadeLista() {
           </Form.Group>
         </div>
 
-        <Row className="units-list">
+        <Row className="unit-list">
           {units.map(item => (
             <Col md={4} className="mt-4" key={item.id}>
-
               <Card>
-                <Card.Body className="position-relative">
-                  <Image src={logoImg} alt="" />
-                </Card.Body>
-                <Card.Footer>
+                <Link className="btn btn-light position-absolute" to={`unidade/${item.id}/editar`}><FaRegEdit /></Link>
+                <Card.Img variant="top" src={item.urlLogo} />
+                <Card.Footer className="bg-white">
                   <h4 className="mb-0">{item.nome}</h4>
                   <small className="text-muted">{item.tipoUnidadeEnum}</small>
                   <div className="d-flex align-items-center justify-content-between mt-3">
-                    <Badge pill variant="primary" className="py-2 px-4">{item.uf}</Badge>
+                    <Badge pill variant="primary" className="py-2 px-2">{item.uf}</Badge>
                     <span className={`position-relative ${item.idEstadoAtual === 1 ? 'status-publish' : item.idEstadoAtual === 2 ? 'status-edit' : item.idEstadoAtual === 3 ? 'status-disabled' : ''}`}>
                       {
                         item.idEstadoAtual === 1 ? 'Publicado' :
@@ -80,12 +67,8 @@ export default function UnidadeLista() {
                       }
                     </span>
                   </div>
-
                 </Card.Footer>
-
               </Card>
-              <Link className="btn btn-primary" to={`unidade/${item.id}/editar`}>Editar</Link>
-              <Button variant="danger" onClick={() => handleClick(item.id)}>Excluir</Button>
             </Col>
           ))}
         </Row>

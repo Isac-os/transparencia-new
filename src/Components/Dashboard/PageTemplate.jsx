@@ -8,7 +8,7 @@ export default function PageTemplate({ children }) {
     <>
       <Container fluid className="bg-light">
         <Row>
-          <Col md={2} className="sidebar border-right d-flex justify-content-between">
+          <Col md={2} className="sidebar border-right d-md-flex d-none justify-content-between">
             <Sidebar />
           </Col>
           <Col md={10} className="pt-3 pb-5 mb-5 h-100">

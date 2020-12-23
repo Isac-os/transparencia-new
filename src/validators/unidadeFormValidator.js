@@ -2,9 +2,7 @@ import mensagens from "./mensagens";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  logo: {
-    required: mensagens.required,
-  },
+
   nome: {
     required: mensagens.required,
   },

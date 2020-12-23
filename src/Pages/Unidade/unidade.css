@@ -34,8 +34,11 @@
   background-color: var(--gray-dark);
   left: -22px;
 }
-
-.units-list {
+.unit-list a {
+  right: 15px;
+  top: 15px;
+}
+/* .units-list {
   height: 650px;
   overflow: auto;
 }
@@ -55,4 +58,4 @@
 }
 .units-list a:hover {
   text-decoration: none;
-}
+} */

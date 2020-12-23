@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Form, Image, Breadcrumb, Card, Alert } from 'react-bootstrap';
-import UnidadesService from '../../Services/UnidadesService';
+import UnidadeService from '../../Services/UnidadeService';
 
 import './unidade.css';
 
@@ -10,7 +10,7 @@ export default function Unidade(props) {
 
   useEffect(() => {
     const id = props.match.params.id;
-    UnidadesService.get(id).then(results => {
+    UnidadeService.get(id).then(results => {
       setUnit(results.data);
     })
     // /* const fetchData = async () => {
@@ -21,89 +21,9 @@ export default function Unidade(props) {
     // fetchData(); */
   }, [props]);
 
-  const {
-    accountability,
-    accounting_docs,
-    contacts,
-    public_call,
-    selection_approval,
-    management_contracts,
-    selective_proccess,
-    people,
-    servers,
-    mat_med,
-    politics,
-    contractThirdParties,
-    historic } = unit;
 
-  const newArray = [
-    {
-      id: 1,
-      name: " Prestação de contas",
-      data: accountability
-    },
-    {
-      id: 2,
-      name: " Documentos de contabilidade",
-      data: accounting_docs
-    },
-    {
-      id: 3,
-      name: " Contatos",
-      data: contacts
-    },
-    {
-      id: 4,
-      name: " Chamada pública",
-      data: public_call
-    },
-    {
-      id: 5,
-      name: " Aprovação da seleção",
-      data: selection_approval
-    },
-    {
-      id: 6,
-      name: " Contratos de gestão",
-      data: management_contracts
-    },
-    {
-      id: 7,
-      name: " Processo seletivo",
-      data: selective_proccess
-    },
-    {
-      id: 8,
-      name: " Pessoas",
-      data: people
-    },
-    {
-      id: 9,
-      name: " Servidores",
-      data: servers
-    },
-    {
-      id: 10,
-      name: " Material médico",
-      data: mat_med
-    },
-    {
-      id: 11,
-      name: " Política",
-      data: politics
-    },
-    {
-      id: 12,
-      name: " Contrato de partidos terceiros ",
-      data: contractThirdParties
-    },
-    {
-      id: 13,
-      name: " Histórico",
-      data: historic
-    }
-  ]
-  function handleChange(event) {
+
+  /* function handleChange(event) {
     const id = +event.target.value - 1;
     const finalData = newArray[id].data;
     if (finalData !== null) {
@@ -112,8 +32,7 @@ export default function Unidade(props) {
       setDocs("")
     }
     return;
-  }
-  console.log("unidade", unit)
+  } */
   return (
     <>
       <div className="unit">
@@ -122,7 +41,7 @@ export default function Unidade(props) {
             <Breadcrumb>
               <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
               <Breadcrumb.Item active href="">
-                {unit.name}
+                {unit.nome}
               </Breadcrumb.Item>
             </Breadcrumb>
           </div>
@@ -137,12 +56,12 @@ export default function Unidade(props) {
           </Row>
           <Row className="mt-4">
             <Col md={12}>
-              <h1>{unit.name}</h1>
+              <h1>{unit.nome}</h1>
             </Col>
           </Row>
           <Row className="mt-4">
             <Col md={12}>
-              <h5>{unit.resume}</h5>
+              {unit.resumo && <h5>{unit.resumo}</h5>}
             </Col>
           </Row>
           <Row>
@@ -152,13 +71,13 @@ export default function Unidade(props) {
           </Row>
           <Row className="mt-4">
             <Col md={6}>
-              <h5>CNPJ: {unit.cnpj}</h5>
-              <h5>Endereço: {unit.address}</h5>
+              {unit.cnpj && <h5>CNPJ: {unit.cnpj}</h5>}
+              <h5>Endereço: {unit.endereco}</h5>
               <h5>Cidade: {unit.city}/{unit.uf}</h5>
             </Col>
             <Col md={6}>
               <h5>CEP: {unit.cep}</h5>
-              <h5>Telefone: {unit.phone}</h5>
+              <h5>Telefone: {unit.telefone}</h5>
             </Col>
           </Row>
           <Row className="infos">
@@ -166,7 +85,7 @@ export default function Unidade(props) {
               <h2>Informações</h2>
             </Col>
           </Row>
-          <Row className="mt-2 select">
+          {/*  <Row className="mt-2 select">
             <Col md={4}>
               <label>Selecione o tipo de informação</label>
               <Form.Group>
@@ -176,7 +95,7 @@ export default function Unidade(props) {
                 </Form.Control>
               </Form.Group>
             </Col>
-          </Row>
+          </Row> */}
           <Row>
             <Container>
               <>
