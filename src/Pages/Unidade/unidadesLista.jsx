@@ -59,10 +59,10 @@ export default function UnidadeLista() {
                   <small className="text-muted">{item.tipoUnidadeEnum}</small>
                   <div className="d-flex align-items-center justify-content-between mt-3">
                     <Badge pill variant="primary" className="py-2 px-2">{item.uf}</Badge>
-                    <span className={`position-relative ${item.idEstadoAtual === 1 ? 'status-publish' : item.idEstadoAtual === 2 ? 'status-edit' : item.idEstadoAtual === 3 ? 'status-disabled' : ''}`}>
+                    <span className={`position-relative ${item.idEstadoAtual === 1 ? 'status-edit' : item.idEstadoAtual === 2 ? 'status-publish' : item.idEstadoAtual === 3 ? 'status-disabled' : ''}`}>
                       {
-                        item.idEstadoAtual === 1 ? 'Publicado' :
-                          item.idEstadoAtual === 2 ? 'Em edição' :
+                        item.idEstadoAtual === 1 ? 'Em edição' :
+                          item.idEstadoAtual === 2 ? 'Publicado' :
                             item.idEstadoAtual === 3 ? 'Desativado' : ''
                       }
                     </span>

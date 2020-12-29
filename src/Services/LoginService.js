@@ -1,8 +1,8 @@
 import api from './api';
 
 class LoginService {
-  get(data) {
-    return api.get("login", data)
+  create(data) {
+    return api.post("login", data)
   }
 }
 

@@ -41,6 +41,7 @@ export default function UnidadeFormulario(props) {
       });
     res.then(results => {
       alert('Operação realizada com sucesso.')
+      console.log(data)
       props.history.push("/unidades");
     }).catch(error => {
       console.log(error.response.data);
@@ -95,7 +96,7 @@ export default function UnidadeFormulario(props) {
     <>
       <PageTemplate>
         <Breadcrumb>
-          <Breadcrumb.Item href="/unidade">
+          <Breadcrumb.Item href="/unidades">
             Unidades
           </Breadcrumb.Item>
           <Breadcrumb.Item active>Cadastrar Unidades </Breadcrumb.Item>
@@ -125,11 +126,11 @@ export default function UnidadeFormulario(props) {
           </Form.Row>
           <Form.Row>
             <Select label="Trata COVID" name="trataCovid" placeholder="Trata COVID" firstoption="Selecione o uma opção" reference={reference} size={3} val={unitValue.trataCovid} data={[{ id: 1, name: 'Sim' }, { id: 2, name: 'Não' }]} description="name" />
-            <Select label="Estado atual" name="idEstadoAtual" placeholder="Estado atual" reference={reference} size={2} val={unitValue.idEstadoAtual} firstoption='Selecione um estado' description="name" data={[{ id: 1, name: "Publicada" }, { id: 2, name: "Em edição" }, { id: 3, name: "Desativada" }]} />
+            {/* <Select label="Estado atual" name="idEstadoAtual" placeholder="Estado atual" reference={reference} size={2} val={unitValue.idEstadoAtual} firstoption='Selecione um estado' description="name" data={[{ id: 1, name: "Publicada" }, { id: 2, name: "Em edição" }, { id: 3, name: "Desativada" }]} /> */}
             <Input label="Código CNES" name="codigoCnes" placeholder="Digite o código CNES" reference={reference} size={2} val={unitValue.codigoCnes} />
           </Form.Row>
           <Form.Row>
-            <Input label="E-mail" name="email" placeholder="E-mail da unidade" reference={reference} size={2} val={unitValue.email} />
+            <Input label="E-mail" name="email" placeholder="E-mail da unidade" reference={reference} size={4} val={unitValue.email} />
             <Input label="Telefone" name="telefone" placeholder="Telefone da unidade" mask={["(99) 9999-9999", "(99) 99999-9999"]} reference={reference} size={2} val={unitValue.telefone} />
           </Form.Row>
           <Form.Row>
