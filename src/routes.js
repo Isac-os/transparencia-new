@@ -8,6 +8,7 @@ import Unidade from './Pages/Unidade/unidade';
 import UnidadesLista from './Pages/Unidade/unidadesLista';
 import UnidadeFormulario from './Pages/Unidade/unidadeFormulario';
 import Usuarios from './Pages/Usuarios/usuario';
+import UnidadeFormularioEditar from './Pages/Unidade/unidadeFormularioEditar';
 
 export default function Routes() {
   return (
@@ -19,10 +20,10 @@ export default function Routes() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/teste" component={Teste} />
           <Route exact path="/unidade/nova" component={UnidadeFormulario} />
-          <Route exact path="/unidade/:id/editar" component={UnidadeFormulario} />
+          <Route exact path="/unidade/:id/editar" component={UnidadeFormularioEditar} />
           <Route exact path="/unidades" component={UnidadesLista} />
           <Route exact path="/unidade/:id" component={Unidade} />
-          <Route exact path="/usuarios" component={Usuarios}/>
+          <Route exact path="/usuarios" component={Usuarios} />
         </Switch>
         <Footer />
       </BrowserRouter>

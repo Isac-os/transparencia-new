@@ -12,8 +12,9 @@ import validator from "../../validators/unidadeFormValidator";
 import S3Client from '../../Services/S3Client';
 
 import './unidade.css';
+import api from '../../Services/api';
 
-export default function UnidadeFormulario(props) {
+export default function UnidadeFormularioEditar(props) {
   const [unitValue, setUnitValue] = useState({});
   const [file, setFile] = useState();
 
@@ -29,6 +30,28 @@ export default function UnidadeFormulario(props) {
       });
     }
   }, [props])
+
+
+
+  function publicaUnidade() {
+    const res = api.put(`/unidade/alteraSituacao/${unitValue.id}/2`)
+      .then(function (res) {
+        console.log(res.data)
+      })
+      .catch(function (error) {
+        alert('deu errado')
+      });
+  }
+
+  function desativaUnidade() {
+    const res = api.put(`/unidade/alteraSituacao/${unitValue.id}/3`)
+      .then(function (res) {
+        console.log(res.data)
+      })
+      .catch(function (error) {
+        alert('deu errado')
+      });
+  }
 
   function onSubmit(data) {
     const imageUrl = unitValue.urlLogo;
@@ -136,7 +159,9 @@ export default function UnidadeFormulario(props) {
           <Form.Row>
             <Textarea label="Descrição da unidade" name="resumo" placeholder="Escreva um breve resumo sobre a unidade" reference={reference} size={12} rows={6} val={unitValue.resumo} />
           </Form.Row>
-          <Button variant="primary" type="submit">Cadastrar Unidade</Button>
+          <Button variant="primary" type="submit">Atualizar Informações</Button>
+          <Button className="ml-4" onClick={() => publicaUnidade()} variant="success">Publicar Unidade</Button>
+          <Button className="ml-4" onClick={() => desativaUnidade()} variant="secondary" >Desativar Unidade</Button>
           {/*           <Input name="tsRegistro" reference={reference} size={2} val={unitValue.tsRegistro} hidden />
  */}        </Form>
       </PageTemplate>
