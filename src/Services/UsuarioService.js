@@ -7,6 +7,10 @@ class UsuarioService {
     return api.get("usuarios");
   }
 
+  create(data) {
+    return api.post("usuario", data);
+  }
+
 }
 
 export default new UsuarioService();

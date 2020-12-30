@@ -9,6 +9,7 @@ import UnidadesLista from './Pages/Unidade/unidadesLista';
 import UnidadeFormulario from './Pages/Unidade/unidadeFormulario';
 import Usuarios from './Pages/Usuarios/usuario';
 import UnidadeFormularioEditar from './Pages/Unidade/unidadeFormularioEditar';
+import UsuarioFormulario from './Pages/Usuarios/usuarioFormulario';
 
 export default function Routes() {
   return (
@@ -24,6 +25,7 @@ export default function Routes() {
           <Route exact path="/unidades" component={UnidadesLista} />
           <Route exact path="/unidade/:id" component={Unidade} />
           <Route exact path="/usuarios" component={Usuarios} />
+          <Route exact path="/usuario/novo" component={UsuarioFormulario}/>
         </Switch>
         <Footer />
       </BrowserRouter>

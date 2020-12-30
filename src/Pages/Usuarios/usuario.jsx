@@ -24,7 +24,7 @@ export default function Usuarios(props) {
   return (
     <>
       <PageTemplate>
-        <Link to="unidade/nova" className="btn btn-primary mb-4"><FaUserPlus /> Cadastrar Usuário</Link>
+        <Link to="usuario/novo" className="btn btn-primary mb-4"><FaUserPlus /> Cadastrar Usuário</Link>
         <h1>Usuários cadastrados</h1>
         <div className="d-flex align-items-center justify-content-start mt-4 search-input">
           <Form.Group controlId="exampleForm.ControlSelect1" className="mr-4">
