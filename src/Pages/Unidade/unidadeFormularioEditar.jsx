@@ -36,7 +36,8 @@ export default function UnidadeFormularioEditar(props) {
   function publicaUnidade() {
     const res = api.put(`/unidade/alteraSituacao/${unitValue.id}/2`)
       .then(function (res) {
-        console.log(res.data)
+        alert('Operação realizada com sucesso.')
+      props.history.push("/unidades");
       })
       .catch(function (error) {
         alert('deu errado')
@@ -46,7 +47,8 @@ export default function UnidadeFormularioEditar(props) {
   function desativaUnidade() {
     const res = api.put(`/unidade/alteraSituacao/${unitValue.id}/3`)
       .then(function (res) {
-        console.log(res.data)
+        alert('Operação realizada com sucesso.')
+        props.history.push("/unidades");
       })
       .catch(function (error) {
         alert('deu errado')
