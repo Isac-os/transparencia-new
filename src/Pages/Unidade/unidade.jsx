@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Form, Image, Breadcrumb, Card, Alert } from 'react-bootstrap';
 import { FaRegEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import PageTemplate from '../../Components/Dashboard/PageTemplate';
 import UnidadeService from '../../Services/UnidadeService';
 
 import './unidade.css';
@@ -36,7 +37,7 @@ export default function Unidade(props) {
     return;
   } */
   return (
-    <>
+    <> <PageTemplate>
       <div className="unit">
         <Container>
           <div className="mt-4">
@@ -125,6 +126,8 @@ export default function Unidade(props) {
 
         </Container>
       </div>
+
+    </PageTemplate>
 
     </>
 
