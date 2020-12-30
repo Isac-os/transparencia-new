@@ -15,7 +15,7 @@ import Input from '../../Components/Forms/Input';
 
 export default function Login(props) {
 
-  const { register,  errors } = useForm();
+  const { register, errors } = useForm();
   const reference = { register, validator, errors };
 
   const [{ values }, handleChange, handleSubmit] = useLogin();
@@ -53,16 +53,16 @@ export default function Login(props) {
             <Form onSubmit={handleSubmit(sendLogin)}>
               <h2>Login</h2>
               <Form.Row>
-                <Input 
-                onChange={handleChange}
-                label="CPF" name="email" placeholder="Digite o seu CPF" reference={reference} size={12} />
+                <Input
+                  onChange={handleChange}
+                  label="CPF" name="email" placeholder="Digite o seu CPF" reference={reference} size={12} />
               </Form.Row>
               <Form.Row>
-                <Input 
-                onChange={handleChange}
-                label="Senha" name="password" 
-                placeholder="Digite a sua senha" 
-                reference={reference} size={12} />
+                <Input
+                  onChange={handleChange}
+                  label="Senha" name="password"
+                  placeholder="Digite a sua senha"
+                  reference={reference} size={12} />
               </Form.Row>
               <Button variant="primary" type="submit" size="block">Entrar</Button>
               <Link className="mt-4">
