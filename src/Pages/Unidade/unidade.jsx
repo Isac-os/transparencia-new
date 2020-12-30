@@ -55,7 +55,7 @@ export default function Unidade(props) {
                 className=""
                 alt="isac-logo"
               />
-              <Link className="btn btn-primary" to={`unidade/${unit.id}/editar`}><FaRegEdit /> Editar Unidade</Link>
+              <Link className="btn btn-primary" to={`${unit.id}/editar`}><FaRegEdit /> Editar Unidade</Link>
             </Col>
           </Row>
           <Row className="mt-4">
