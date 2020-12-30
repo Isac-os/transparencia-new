@@ -2,9 +2,9 @@ import api from './api';
 import { unMask } from 'remask';
 
 class LoginService {
-  create(data) {
+  login(data) {
     data = { ...data, cpf: unMask(data.cpf) };
-    return api.post("login", data)
+    return api.get("login", data)
   }
 }
 
