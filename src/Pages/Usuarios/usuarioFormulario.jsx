@@ -60,7 +60,6 @@ export default function UsuarioFormulario(props) {
           <Form.Row>
             <Input label="Curriculo" name="curriculo" placeholder="Curriculo" reference={reference} size={3} />
             <Input label="Função" name="idFuncaoAtual" placeholder="Função" reference={reference} size={3} />
-            <Input label="Unidade" name="idUnidadeAtual" placeholder="Unidade" reference={reference} size={3} />
             <Select label="Unidade" name="idUnidadeAtual" firstoption="Selecione a unidade" reference={reference} size={3} data={units} description="nome" />
             <Input label="Estado" name="idEstadoAtual" placeholder="Estado" reference={reference} size={3} />
           </Form.Row>
