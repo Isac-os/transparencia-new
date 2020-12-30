@@ -19,7 +19,7 @@ export default function Usuarios(props) {
       setUsers(results.data);
       console.log(results.data);
     })
-  }, [])
+  }, [props])
 
   return (
     <>
@@ -27,7 +27,7 @@ export default function Usuarios(props) {
         <Link to="usuario/novo" className="btn btn-primary mb-4"><FaUserPlus /> Cadastrar Usuário</Link>
         <h1>Usuários cadastrados</h1>
         <div className="d-flex align-items-center justify-content-start mt-4 search-input">
-          <Form.Group controlId="exampleForm.ControlSelect1" className="mr-4">
+          {/* <Form.Group controlId="exampleForm.ControlSelect1" className="mr-4">
             <Form.Label>Selecione a Unidade</Form.Label>
             <Form.Control as="select">
               <option>1</option>
@@ -38,7 +38,7 @@ export default function Usuarios(props) {
             <Form.Control as="select">
               <option>1</option>
             </Form.Control>
-          </Form.Group>
+          </Form.Group> */}
         </div>
         <div>
           {users.map(item => {
@@ -46,21 +46,19 @@ export default function Usuarios(props) {
               <Card className="mb-4">
                 <Card.Body>
                   <Row>
-                    <>
-                      <Col md={2}>
-                        Nome: {item.nome}
-                      </Col>
-                      <Col md={2}>
-                        Unidade: {item.unidade.nome}
-                      </Col>
-                      <Col md={2}>
-                        Função: {item.funcao}
-                      </Col>
-                      <Link to={`/usuario/${item.id}/editar`}>
-                        <Button className="ml-6">Editar</Button>
-                      </Link>
+                    <Col md={2}>
+                      Nome: {item.nome}
+                    </Col>
+                    <Col md={2}>
+                      Unidade: {item.unidade.nome}
+                    </Col>
+                    <Col md={2}>
+                      Função: {item.funcao}
+                    </Col>
+                    <Link to={`/usuario/${item.id}/editar`}>
+                      <Button className="ml-6">Editar</Button>
+                    </Link>
 
-                    </>
 
                   </Row>
                 </Card.Body>

@@ -37,7 +37,7 @@ export default function UnidadeFormularioEditar(props) {
     const res = api.put(`/unidade/alteraSituacao/${unitValue.id}/2`)
       .then(function (res) {
         alert('Operação realizada com sucesso.')
-      props.history.push("/unidades");
+        props.history.push("/unidades");
       })
       .catch(function (error) {
         alert('deu errado')
@@ -52,6 +52,18 @@ export default function UnidadeFormularioEditar(props) {
       })
       .catch(function (error) {
         alert('deu errado')
+      });
+  }
+
+  function excluiUnidade() {
+    const response = UnidadeService.delete(unitValue.id)
+      .then(function (response) {
+        alert('Unidade deletada')
+        props.history.push("/unidades");
+      })
+      .catch(function (error) {
+        alert('deu errado')
+        console.log(error)
       });
   }
 
@@ -164,6 +176,7 @@ export default function UnidadeFormularioEditar(props) {
           <Button variant="primary" type="submit">Atualizar Informações</Button>
           <Button className="ml-4" onClick={() => publicaUnidade()} variant="success">Publicar Unidade</Button>
           <Button className="ml-4" onClick={() => desativaUnidade()} variant="secondary" >Desativar Unidade</Button>
+          <Button className="ml-4" onClick={() => excluiUnidade()} variant="danger" >Excluir Unidade</Button>
           {/*           <Input name="tsRegistro" reference={reference} size={2} val={unitValue.tsRegistro} hidden />
  */}        </Form>
       </PageTemplate>

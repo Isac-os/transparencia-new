@@ -33,4 +33,7 @@ export default {
   summary: {
     required: mensagens.required,
   },
+  logo: {
+    required: mensagens.required
+  }
 };

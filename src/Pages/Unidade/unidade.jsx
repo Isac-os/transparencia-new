@@ -50,7 +50,7 @@ export default function Unidade(props) {
           </div>
           <Row>
             <Col md={12} className="d-flex align-items-center justify-content-between">
-              <Image src="/logo-horizontal.svg"
+              <Image src={unit.urlLogo}
                 width="250"
                 className=""
                 alt="isac-logo"

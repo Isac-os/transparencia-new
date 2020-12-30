@@ -58,7 +58,7 @@ export default function UnidadeLista() {
               {ufs.map(item => (<option key={item}>{item}</option>))}
             </Form.Control>
           </Form.Group>
-          <Form.Group controlId="exampleForm.ControlSelect1" className="mr-4">
+          {/* <Form.Group controlId="exampleForm.ControlSelect1" className="mr-4">
             <Form.Label>Tipo de Unidade</Form.Label>
             <Form.Control as="select">
               <option>Selecione</option>
@@ -71,7 +71,7 @@ export default function UnidadeLista() {
               <option>Selecione</option>
               {unitState.map(item => (<option key={item}>{item}</option>))}
             </Form.Control>
-          </Form.Group>
+          </Form.Group> */}
         </div>
 
         <Row className="unit-list">
