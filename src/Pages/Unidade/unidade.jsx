@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Form, Image, Breadcrumb, Card, Alert } from 'react-bootstrap';
+import { FaRegEdit } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import UnidadeService from '../../Services/UnidadeService';
 
 import './unidade.css';
@@ -46,12 +48,13 @@ export default function Unidade(props) {
             </Breadcrumb>
           </div>
           <Row>
-            <Col md={6}>
-              <Image src="/logo-horizontal.svg" fluid
-                width="250rem"
-                className="d-inline-block align-top logo-isac mt-4"
+            <Col md={12} className="d-flex align-items-center justify-content-between">
+              <Image src="/logo-horizontal.svg"
+                width="250"
+                className=""
                 alt="isac-logo"
               />
+              <Link className="btn btn-primary" to={`unidade/${unit.id}/editar`}><FaRegEdit /> Editar Unidade</Link>
             </Col>
           </Row>
           <Row className="mt-4">
@@ -80,7 +83,7 @@ export default function Unidade(props) {
               <h5>Telefone: {unit.telefone}</h5>
             </Col>
           </Row>
-          <Row className="infos">
+          <Row className="infos d-none">
             <Col md={12}>
               <h2>Informações</h2>
             </Col>
@@ -96,7 +99,7 @@ export default function Unidade(props) {
               </Form.Group>
             </Col>
           </Row> */}
-          <Row>
+          <Row className="d-none">
             <Container>
               <>
                 {docs.length === 0 ? <>

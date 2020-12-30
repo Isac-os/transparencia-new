@@ -79,22 +79,23 @@ export default function UnidadeLista() {
             {units.map(item => (
               <Col md={4} className="mt-4" key={item.id}>
                 <Card>
-                  <Link className="btn btn-light position-absolute" to={`unidade/${item.id}/editar`}><FaRegEdit /></Link>
-                  <Card.Img variant="top" src={item.urlLogo} />
-                  <Card.Footer className="bg-white">
-                    <h4 className="mb-0">{item.nome}</h4>
-                    <small className="text-muted">{item.tipoUnidadeEnum}</small>
-                    <div className="d-flex align-items-center justify-content-between mt-3">
-                      <Badge pill variant="primary" className="py-2 px-2">{item.uf}</Badge>
-                      <span className={`position-relative ${item.idEstadoAtual === 1 ? 'status-edit' : item.idEstadoAtual === 2 ? 'status-publish' : item.idEstadoAtual === 3 ? 'status-disabled' : ''}`}>
-                        {
-                          item.idEstadoAtual === 1 ? 'Em edição' :
-                            item.idEstadoAtual === 2 ? 'Publicado' :
-                              item.idEstadoAtual === 3 ? 'Desativado' : ''
-                        }
-                      </span>
-                    </div>
-                  </Card.Footer>
+                  <Link to={`unidade/${item.id}`}>
+                    <Card.Img variant="top" src={item.urlLogo} />
+                    <Card.Footer className="bg-white">
+                      <h4 className="mb-0">{item.nome}</h4>
+                      <small className="text-muted">{item.tipoUnidadeEnum}</small>
+                      <div className="d-flex align-items-center justify-content-between mt-3">
+                        <Badge pill variant="primary" className="py-2 px-2">{item.uf}</Badge>
+                        <span className={`position-relative ${item.idEstadoAtual === 1 ? 'status-edit' : item.idEstadoAtual === 2 ? 'status-publish' : item.idEstadoAtual === 3 ? 'status-disabled' : ''}`}>
+                          {
+                            item.idEstadoAtual === 1 ? 'Em edição' :
+                              item.idEstadoAtual === 2 ? 'Publicado' :
+                                item.idEstadoAtual === 3 ? 'Desativado' : ''
+                          }
+                        </span>
+                      </div>
+                    </Card.Footer>
+                  </Link>
                 </Card>
               </Col>
             ))}

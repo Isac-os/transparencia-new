@@ -34,9 +34,10 @@
   background-color: var(--gray-dark);
   left: -22px;
 }
-.unit-list a {
-  right: 15px;
-  top: 15px;
+.unit-list a,
+.unit-list a:hover {
+  text-decoration: none;
+  color: black;
 }
 /* .units-list {
   height: 650px;
