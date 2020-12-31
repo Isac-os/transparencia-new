@@ -16,9 +16,11 @@ export default function Usuarios(props) {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     UsuarioService.getAll().then(results => {
-      setUsers(results.data);
-      console.log(results.data);
+      // setTimeout(setUsers(results.data),10000)
+      setUsers(results.data)
+      ;
     })
+    console.log(users)
   }, [props])
 
   return (
@@ -47,10 +49,10 @@ export default function Usuarios(props) {
                 <Card.Body>
                   <Row>
                     <Col md={2}>
-                      Nome: {item.nome}
+                       Nome: {item.nome}
                     </Col>
                     <Col md={2}>
-                      Unidade: {item.unidade.nome}
+                        Unidade: {item.unidade.nome}
                     </Col>
                     <Col md={2}>
                       Função: {item.funcao}

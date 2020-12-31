@@ -9,10 +9,11 @@ import PageTemplate from '../../Components/Dashboard/PageTemplate';
 import UsuarioService from '../../Services/UsuarioService';
 import UnidadeService from '../../Services/UnidadeService';
 
-import validator from "../../validators/unidadeFormValidator";
+import validator from "../../validators/usuarioFormValidator";
 
 export default function UsuarioFormulario(props) {
   const [units, setUnist] = useState([]);
+  const [func, setFunc] = useState([]);
 
   const { register, handleSubmit, errors } = useForm();
   const reference = { register, validator, errors };
@@ -22,6 +23,14 @@ export default function UsuarioFormulario(props) {
       setUnist(results.data);
     })
   }, [props])
+
+  function handleFunc(e){
+    setFunc(e.target.funcao)
+  }
+
+  
+
+  console.log("func", func)
 
   function onSubmit(data) {
     const response = UsuarioService.create(data)
@@ -33,7 +42,7 @@ export default function UsuarioFormulario(props) {
         alert('deu errado')
         console.log(error)
       });
-    console.log(data)
+    console.log("data",data)
   }
 
   const funcao = [
@@ -62,19 +71,19 @@ export default function UsuarioFormulario(props) {
         </Breadcrumb>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Row>
-            <Input label="Nome do Usuário" name="nome" placeholder="Digite o nome do usuário" reference={reference} size={6} />
+            <Input label="Nome do Usuário" name="nome" placeholder="Digite o nome do usuário" reference={reference} size={9} />
           </Form.Row>
           <Form.Row>
             <Input label="CPF" name="cpf" placeholder="Digite o CPF do usuário" reference={reference} size={4} mask={"999.999.999-99"} />
             <Input label="E-mail" name="email" placeholder="Digite o Email do usuário" reference={reference} size={4} />
           </Form.Row>
           <Form.Row>
-            <Select firstoption="Selecione a função" label="Função" name="idFuncaoAtual" placeholder="Função" data={funcao} reference={reference} size={3} description="name" />
+            <Select firstoption="Selecione a função" label="Função" name="idFuncaoAtual" placeholder="Função" data={funcao}  reference={reference} size={3} description="name"/>
             <Select firstoption="Selecione a tipo de usuário" label="Tipo de usuário" name="tipoUsuario" placeholder="Tipo de usuário" data={tipoUsuario} reference={reference} size={3} description="name" />
             <Select label="Unidade" name="idUnidadeAtual" firstoption="Selecione a unidade" reference={reference} size={3} data={units} description="nome" />
           </Form.Row>
           <Form.Row>
-            <Input as="textarea" row={10} label="Curriculo" name="curriculo" placeholder="Curriculo" reference={reference} />
+            <Input as="textarea" row={10} label="Curriculo" name="curriculo" placeholder="Curriculo" reference={reference} size={9}/>
           </Form.Row>
           <Button variant="primary" type="submit">Cadastrar Usuário</Button>
         </Form>
