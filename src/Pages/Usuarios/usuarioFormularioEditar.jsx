@@ -9,7 +9,7 @@ import PageTemplate from '../../Components/Dashboard/PageTemplate';
 import UsuarioService from '../../Services/UsuarioService';
 import UnidadeService from '../../Services/UnidadeService';
 
-import validator from "../../validators/unidadeFormValidator";
+import validator from "../../validators/usuarioFormValidator";
 
 export default function UsuarioFormulario(props) {
   const [units, setUnist] = useState([]);
@@ -108,7 +108,7 @@ export default function UsuarioFormulario(props) {
         </Breadcrumb>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Row>
-            <Input label="Nome do Usuário" name="nome" placeholder="Digite o nome do usuário" reference={reference} size={6} val={usuario.nome} />
+            <Input label="Nome do Usuário" name="nome" placeholder="Digite o nome do usuário" reference={reference} size={9} val={usuario.nome} />
           </Form.Row>
           <Form.Row>
             <Input label="CPF" name="cpf" placeholder="Digite o CPF do usuário" reference={reference} size={4} mask={"999.999.999-99"} val={usuario.cpf} />
@@ -120,7 +120,7 @@ export default function UsuarioFormulario(props) {
             <Select label="Unidade" name="idUnidadeAtual" firstoption="Selecione a unidade" reference={reference} size={3} data={units} description="nome" val={usuario.idUnidadeAtual} />
           </Form.Row>
           <Form.Row>
-            <Input as="textarea" row={10} label="Curriculo" name="curriculo" placeholder="Curriculo" reference={reference} val={usuario.curriculo} />
+            <Input as="textarea" row={20} label="Curriculo" name="curriculo" placeholder="Curriculo" reference={reference} val={usuario.curriculo} size={9}/>
           </Form.Row>
           <Button variant="primary" type="submit">Atualizar Usuário</Button>
           <Button className="ml-2" variant="success" onClick={() => ativarUsuario()}>Ativar Usuário</Button>
