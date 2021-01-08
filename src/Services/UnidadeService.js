@@ -7,6 +7,10 @@ class UnidadeService {
     return api.get("unidades");
   }
 
+  postAll(usuario){
+    return api.post("unidades", usuario)
+  }
+
   get(id) {
     return api.get(`unidade/${id}`);
   }

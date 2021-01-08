@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form'
 
 import validator from '../../validators/loginFormValidator';
 import LoginService from '../../Services/LoginService';
+import UnidadeService from '../../Services/UnidadeService';
 
 //import useLogin from '../../Hooks/useLogin';
 
@@ -17,12 +18,26 @@ export default function Login(props) {
   const reference = { register, validator, errors };
   function onSubmit(data) {
     LoginService.login(data).then(results => {
+      localStorage.setItem('usuario', JSON.stringify(results.data));
       console.log(results);
     }).catch((error) => {
-      console.log(error.response.data.message);
+      console.log(error);
     });
 
   }
+  useEffect((props) => {
+    const user = localStorage.getItem('usuario');
+        const usuario = JSON.parse(user)
+        console.log("usu",usuario)
+        UnidadeService.postAll(usuario)
+        .then(results=>{
+          console.log(results)
+        }).catch((error)=>{
+          console.log(error)
+        })
+    }, []);
+
+
   /*   const { register, errors } = useForm();
     const reference = { register, validator, errors };
   
